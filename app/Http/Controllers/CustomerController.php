@@ -18,4 +18,7 @@ class CustomerController extends Controller
         //echo"telo";
         return view('customer.create');
     }
+    function store(Request $request){
+        echo "cobak";
+    }
 }
