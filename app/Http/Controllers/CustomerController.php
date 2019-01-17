@@ -19,6 +19,8 @@ class CustomerController extends Controller
         return view('customer.create');
     }
     public function store(Request $request){
-        echo "cobak";
+        //echo "cobak";
+        $txt_name = $request->input('txt_name');
+        echo $txt_name;
     }
 }
