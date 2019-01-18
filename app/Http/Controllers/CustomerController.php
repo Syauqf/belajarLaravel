@@ -35,4 +35,7 @@ class CustomerController extends Controller
 
         return redirect('http://localhost/coba-laravel/public/customer');
     }
+    function show($id){
+        echo "ember";
+    }
 }
