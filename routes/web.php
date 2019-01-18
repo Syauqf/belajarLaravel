@@ -37,8 +37,8 @@ Route::get('/ukik', 'HomeController@Ukik');
 //Route::get('/customer/store', 'CustomerController@store');
 
 Route::resource('customer', 'CustomerController');
-
-Route::get('/supplier', 'SupplierController@index');
+Route::resource('supplier', 'SupplierController');
+//Route::get('/supplier', 'SupplierController@index');
 Route::get('/karyawan', 'KaryawanController@index');
 Route::get('/products', 'ProductsController@index');
 

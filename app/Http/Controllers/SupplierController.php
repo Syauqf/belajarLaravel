@@ -12,4 +12,19 @@ class SupplierController extends Controller
         //var_dump($supplier);
         return view('supplier.index', compact('supplier'));
     }
+    function create(){
+        return view('supplier.create');
+    }
+    public function store(Request $request){
+        $idS = $request->input('txt_id' );
+        $nameS = $request->input('txt_name');
+        $addressS = $request->input('txt_address');
+
+        Supplier::create([
+            'supplier_id'=>$idS, 
+            'supplier_name'=>$nameS,
+            'supplier_address'=>$addressS
+        ]);
+        return redirect('http://localhost/coba-laravel/public/supplier');
+    }
 }

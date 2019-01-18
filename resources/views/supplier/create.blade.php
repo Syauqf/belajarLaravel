@@ -1,4 +1,4 @@
-<form method="POST" action="http://localhost/coba-laravel/public/customer">
+<form method="POST" action="http://localhost/coba-laravel/public/supplier">
 {{ csrf_field() }}
 
 <p>id      <input type="text" name="txt_id"/></p>

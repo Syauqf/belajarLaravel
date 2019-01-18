@@ -20,7 +20,19 @@ class CustomerController extends Controller
     }
     public function store(Request $request){
         //echo "cobak";
-        $txt_name = $request->input('txt_name');
-        echo $txt_name;
+        $id = $request->input('txt_id');
+        $name = $request->input('txt_name');
+        $address = $request->input('txt_address');
+        echo "id = ",$id,"<br>",
+        "nama = ",$name,"<br>",
+        "alamat = ",$address;
+
+        Customer::create([
+            'customer_id' =>$id, 
+            'name'=>$name,
+            'address'=>$address
+        ]);
+
+        return redirect('http://localhost/coba-laravel/public/customer');
     }
 }
