@@ -36,6 +36,13 @@ class CustomerController extends Controller
         return redirect('http://localhost/coba-laravel/public/customer');
     }
     function show($id){
-        echo "ember";
+        //echo "ember";
+        //echo $id;
+        
+        //select * from Customer where customer_id=$id
+        //$customer = Customer::where('customer_id', $id);
+
+        //var_dump($customer);
+        return view('customer.show', ['customer' => Customer::where('customer_id', $id)]);
     }
 }
