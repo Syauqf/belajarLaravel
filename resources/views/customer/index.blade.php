@@ -3,6 +3,7 @@
 {{$customerlist->name}}
 {{$customerlist->address}}
 <a href="http://localhost/coba-laravel/public/customer/{{$customerlist->customer_id}}">show</a>
+<a href="http://localhost/coba-laravel/public/customer/edit{{$customerlist->customer_id}}">edit</a>
 <br>
 @endforeach
 
