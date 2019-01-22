@@ -1,18 +1,17 @@
-<?php                                                                                              
+<?php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Customer;
 
-class CustomerController extends Controller
+class EmployeeController extends Controller
 {
     //buat fungsi baru untuk index
     function index(){
         //echo "asaoy geboyu";
-        $customer = Customer::get(['customer_id', 'name', 'address']);
+        $employee = Employee::get(['employee_id', 'employee_name', 'employee_address', 'employee_phone_number']);
         //var_dump($customer);
-        return view('customer.index', compact('customer'));
+        return view('employee.index', compact('employee'));
     }
     function create(){
         //echo"telo";
