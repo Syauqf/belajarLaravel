@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class LayoutController extends Controller
 {
-    //
+    function index()
+    {
+        return view('Layout.sb-admin');
+    }
 }
