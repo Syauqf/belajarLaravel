@@ -53,10 +53,10 @@ class CustomerController extends Controller
     public function update(Request $request, $id)
     {
         $name = $request->input("txt_name");
-        $addres = $request->input("txt_addres");
+        $address = $request->input("txt_addres");
         Customer::where('customer_id',$id)->update([ 
             'name' => $name,
-            'addres' => $addres
+            'address' => $address
            ]);
            return redirect ('http://localhost/coba-laravel/public/customer');   
     }
@@ -64,5 +64,10 @@ class CustomerController extends Controller
     {
         Customer::where('customer_id',$id)->delete();
         return redirect ('http://localhost/coba-laravel/public/customer')->with('alert-success','Data berhasi dihapus!');
+    }
+    public function hapus(Request $request, $id)
+    {
+        $customer = Customer::where('customer_id',$id)->delete();
+        return view('customer');
     }
 }
