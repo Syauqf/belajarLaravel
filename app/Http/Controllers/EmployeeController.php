@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Employee;
 
 class EmployeeController extends Controller
 {
@@ -15,53 +16,54 @@ class EmployeeController extends Controller
     }
     function create(){
         //echo"telo";
-        return view('customer.create');
+        return view('employee.create');
     }
     public function store(Request $request){
         //echo "cobak";
         $id = $request->input('txt_id');
         $name = $request->input('txt_name');
         $address = $request->input('txt_address');
-        echo "id = ",$id,"<br>",
-        "nama = ",$name,"<br>",
-        "alamat = ",$address;
+        $phone_number = $request->input('txt_phone_number');
 
-        Customer::create([
-            'customer_id' =>$id, 
-            'name'=>$name,
-            'address'=>$address
+        Employee::create([
+            'employee_id' =>$id, 
+            'employee_name'=>$name,
+            'employee_address'=>$address,
+            'employee_phone_number'=>$phone_number
         ]);
 
-        return redirect('http://localhost/coba-laravel/public/customer');
+        return redirect('http://localhost/coba-laravel/public/employee');
     }
-    function show($id){
+    function show($employee_id){
         //echo "ember";
         //echo $id;
         
         //select * from Customer where customer_id=$id
-        $customer = Customer::where('customer_id', $id);
+        $employee = Employee::where('employee_id', $employee_id);
 
         //var_dump($customer);
-        return view('customer.show', ['customer' => Customer::where('customer_id', $id)]);
+        return view('employee.show', ['employee' => Employee::where('employee_id', $employee_id)]);
     }
-    public function edit($id)
+    public function edit($employee_id)
     {
-        $customer = Customer::where('customer_id',$id)->get();
-        return view('customer.edit',compact('customer'));
+        $employee = Employee::where('employee_id',$employee_id)->get();
+        return view('employee.edit',compact('employee'));
     }
-    public function update(Request $request, $id)
+    public function update(Request $request, $employee_id)
     {
-        $name = $request->input("txt_name");
-        $addres = $request->input("txt_addres");
-        Customer::where('customer_id',$id)->update([ 
-            'name' => $name,
-            'addres' => $addres
+        $employee_name = $request->input("txt_name");
+        $employee_address = $request->input("txt_addres");
+        $employee_phone_number = $request->input("txt_phone_number");
+        Employee::where('employee_id',$employee_id)->update([ 
+            'employee_name' => $employee_name,
+            'employee_address' => $employee_address,
+            'employee_phone_number' => $employee_phone_number
            ]);
-           return redirect ('http://localhost/coba-laravel/public/customer');   
+           return redirect ('http://localhost/coba-laravel/public/employee');   
     }
-    public function destroy($id)
+    public function destroy($employee_id)
     {
-        Customer::where('customer_id',$id)->delete();
-        return redirect ('http://localhost/coba-laravel/public/customer')->with('alert-success','Data berhasi dihapus!');
+        Employee::where('employee_id',$employee_id)->delete();
+        return redirect ('http://localhost/coba-laravel/public/employee')->with('alert-success','Data berhasi dihapus!');
     }
 }
