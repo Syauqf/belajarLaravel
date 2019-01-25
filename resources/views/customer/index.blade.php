@@ -26,19 +26,17 @@
                                 </thead>
                                 <tbody>
 @foreach ($customer as $customerlist)
-
                                     <tr class="gradeA">
                                         <td>{{$customerlist->customer_id}}</td>
                                         <td>{{$customerlist->name}}</td>
                                         <td>{{$customerlist->address}}</td>
-                                        <td class="center"><button><form action=""><a href="http://localhost/coba-laravel/public/customer/{{$customerlist->customer_id}}/edit">Edit</a></form></button></td>
-                                        <td class="center"><form method="POST" action="{{ route('customer.destroy', $customerlist->customer_id) }}">{{ csrf_field() }}{{ method_field('DELETE') }}<input type="submit" name="delete" id="delete" value="hapus"/></Form></td>
+                                        <td class="center"><form><a href="http://localhost/coba-laravel/public/customer/{{$customerlist->customer_id}}/edit" ><input type="button" class="btn btn-outline btn-warning" value="Edit"></a></form></td>
+                                        <td class="center"><form method="POST" action="{{ route('customer.destroy', $customerlist->customer_id) }}">{{ csrf_field() }}{{ method_field('DELETE') }}<input type="submit" name="delete" id="delete" value="Hapus" type="button" class="btn btn-outline btn-danger"/></Form></td>
                                     </tr>   
 @endforeach 
-
                                 </tbody>
                             </table>
-                            <a href="http://localhost/coba-laravel/public/customer/create">tambah data</a>
+                            <button type="button" class="btn btn-outline btn-primary"><a href="http://localhost/coba-laravel/public/customer/create">tambah data</a></button>
                         </div>
                         <!-- /.panel-body -->
                     </div>
