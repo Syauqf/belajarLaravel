@@ -36,7 +36,7 @@
 @endforeach 
                                 </tbody>
                             </table>
-                            <button type="button" class="btn btn-outline btn-primary"><a href="http://localhost/coba-laravel/public/customer/create">tambah data</a></button>
+                            <button type="button" class="btn btn-outline btn-primary" style="text-decoration:none"><a href="http://localhost/coba-laravel/public/customer/create">tambah data</a></button>
                         </div>
                         <!-- /.panel-body -->
                     </div>

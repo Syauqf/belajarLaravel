@@ -8,6 +8,7 @@ class Karyawan extends Model
 {
     protected $table = 'karyawan';
 
+    public $timestamps = false;
     //yang kedua atributnya
     protected $fillable = [
     'id_karyawan', 

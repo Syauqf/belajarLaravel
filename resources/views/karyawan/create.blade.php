@@ -16,7 +16,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                <form method="POST" action="http://localhost/coba-laravel/public/employee">
+                                <form method="POST" action="http://localhost/coba-laravel/public/karyawan">
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                     <input type="text" name="txt_id" class="form-control" placeholder="ID"/><br/>

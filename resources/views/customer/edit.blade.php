@@ -22,13 +22,13 @@
                 {{ method_field('PUT') }}
                 <div class="form-group">
                 <label for="txt_name">Name</label>
-                <input type="text" name="txt_name" id="txt_id" value="{{$customer->name}}" class="form-control" placeholder="Enter text"/><br/>
+                <input type="text" name="txt_name" id="txt_id" value="{{$customer->name}}" class="form-control"/><br/>
                 </div>
                 <div class="form-group">
                 <label for="txt_addres">Address</label>
-                <input type="text" name="txt_addres" id="txt_id" value="{{$customer->address}}" class="form-control" placeholder="Enter text"/><br/>
+                <input type="text" name="txt_addres" id="txt_id" value="{{$customer->address}}" class="form-control"/><br/>
                 </div>
-                <input type="submit" name="sbm_save" id="sbm_save" value="save"/>
+                <input type="submit" class="btn btn-outline btn-success"name="sbm_save" id="sbm_save" value="save"/>
                 </form>                                   
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->

@@ -65,9 +65,4 @@ class CustomerController extends Controller
         Customer::where('customer_id',$id)->delete();
         return redirect ('http://localhost/coba-laravel/public/customer')->with('alert-success','Data berhasi dihapus!');
     }
-    public function hapus(Request $request, $id)
-    {
-        $customer = Customer::where('customer_id',$id)->delete();
-        return view('customer');
-    }
 }

@@ -1,4 +1,4 @@
-@foreach($employee as $employee)
+@foreach ($karyawan as $karyawanlist)
 @extends('layout.sb-admin')
 @section('content')
 <div class="row">
@@ -17,20 +17,20 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                <form action="{{ route('employee.update',  $employee->employee_id) }}" method="post">
+                                <form action="{{ route('karyawan.update',  $karyawanlist->id_karyawan) }}" method="post">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
                 <div class="form-group">
                 <label for="txt_name">Name</label>
-                <input type="text" name="txt_name" id="txt_id" value="{{$employee->employee_name}}" class="form-control"/><br/>
+                <input type="text" name="txt_name" id="txt_id" value="{{$karyawanlist->nama_karyawan}}" class="form-control"/><br/>
                 </div>
                 <div class="form-group">
                 <label for="txt_addres">Address</label>
-                <input type="text" name="txt_addres" id="txt_id" value="{{$employee->employee_address}}" class="form-control"/><br/>
+                <input type="text" name="txt_address" id="txt_id" value="{{$karyawanlist->alamat_karyawan}}" class="form-control"/><br/>
                 </div>
                 <div class="form-group">
                 <label for="txt_phone_number">Phone Number</label>
-                <input type="text" name="txt_phone_number" id="txt_id" value="{{$employee->employee_phone_number}}" class="form-control"/><br/>
+                <input type="text" name="txt_phone_number" id="txt_id" value="{{$karyawanlist->telpon_karyawan}}" class="form-control"/><br/>
                 </div>
                 <input type="submit" class="btn btn-outline btn-success"name="sbm_save" id="sbm_save" value="save"/>
                 </form>                                   
